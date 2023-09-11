@@ -1,0 +1,161 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsthm}
+
+
+\title{Physics 1D03 Lecture 2: Kinematics in One Dimension}
+\author{Talha Ahmad}
+\date{September 6, 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Dimensional Analysis}
+
+There are 3 fundamental dimensions in mechanics:
+
+\begin{itemize}
+	\item Mass (Denoted by "M")
+	\item Length (Denoted by "L")
+	\item Time (Denoted by "T")
+\end{itemize}
+
+The dimensions across a single equation must be \underline{consistent}.
+Some basic rules regarding dimensions in an equation:
+
+\begin{enumerate}
+	\item Terms on both sides of an equation must have same dimensions.
+	\item Log and exponents apply to \textbf{dimensionless} quantities.
+	\item Trig functions apply to \textbf{dimensionless} quantities (ie. radians or degrees).
+	\item Constants cannot be determined through dimensional analysis.
+\end{enumerate}
+
+Dimensional analysis analyzes the relationship between physical quantities by taking their
+fundamental dimensions (M, L, T) in addition to their units of measurement and tracking these
+quantities.
+
+\bigskip
+
+This is an example for how the units of \emph{E} in Einstein's famous energy-mass equialence,
+$E = mc^2$, can be derived through dimensional analysis:
+
+\begin{center}
+
+	$E = mc^2$ 
+	
+	In this formula, \textit{m} is known to be mass; and $c^2$, which is the speed of light,
+	is known to be velocity squared. Velocity is known to be $\frac{L}{T}$.
+
+	\medskip
+
+	\LARGE $\frac{M \cdot L^2}{T^2}$ \normalsize
+
+	\bigskip
+
+	Over here, we have mass multiplied by length squared all over time squared.
+	These dimensions are equal to energy; therefore, the units of \textit{E}
+	are joules.
+
+\end{center}
+
+\bigskip
+
+\noindent
+Another example in which we determine if an equation is correct based solely on its dimensions:
+
+\begin{center}
+	$x = x_0 + v_0t^2 + at$
+
+	\medskip
+
+	When broken down into its fundamental diimensions, this equation is of type:
+
+	\medskip
+
+	$L = L + LT + \LARGE \frac{L}{T} \normalsize$
+
+	\medskip
+
+	Therefore, this equation is not valid since all terms \underline{need} to be of fundamental dimension
+	type "length," yet one is of type length times time, while the other is of type length over time.
+	To fix this issue, we could divide the second term by \textit{T} and multiply the third term by \textit{T},
+	which would result in all the terms being \textit{L}. This would be akin to the overall expression being:
+
+	\medskip
+
+	$x = x_0 + v_0t + at^2$
+	
+	\medskip
+
+	While this equation is valid from a dimensional standpoint, dimensional analysis cannot determine any constants,
+	and as we know this kinematic equation to be, it is originally of form:
+
+	\medskip
+
+	$x = x_0 + v_0t + \frac{1}{2}at^2$
+
+\end{center}
+
+\bigskip
+
+\noindent
+Through dimensional analysis, we are also capable of deriving laws of physics. As an example, consider a pendulum
+with string length \textit{L} and of mass \textit{M}. In order to derive an equation for the period of a pendulum 
+we know that periods are of fundamental dimension type \textit{T}. We know that \textit{g} acceleration is acting
+on the pendulum, causing it to swing. Since acceleration is of form $\frac{L}{T^2}$, we know that dividing \textit{L}
+by $\frac{L}{T^2}$ will result in $T^2$. Since we need a final answer of type \textit{T}, we can take the square root
+of this. Therefore, the final equation derived to find the swing of a pendulum is:
+
+\begin{center}
+	$P = C\sqrt{\frac{L}{g}}$
+\end{center}
+
+\noindent
+Where C is a constant that cannot be determined through dimensional analysis.
+
+\section{Kinematics}
+
+Kinematics is the study of motion not including what causes or modifies that motion. Put simply, it is the study
+of motion itself without external factors acting upon it. The object or particle of motion that is under study
+is referred to as a \textit{\textbf{"model"}} and when this particle's motion occurs along a straight line, the motion is
+\textit{\textbf{"one dimensional"}}.
+
+One-dimensional motion is described by scalars (numbers with units and no direction) as functions of time. These
+functions are:
+
+\begin{itemize}
+	\item position: $x(t)$
+	\item velocity: $v(t)$
+	\item acceleration: $a(t)$
+\end{itemize}
+
+\noindent
+In regards to a position function specifically, there are two values of measurement of utmost importance:
+displacement and distance. Displacement refers to the difference between the starting and ending position
+values at two separate points across the function whereas distance refers to the total distance of the
+particle's path.
+
+Velocity is the rate at which position is changing over time, and acceleration is the rate at which velocity
+is changing over time. If we calculate the slope between two separate points in a position-time graph,
+we end up with the average velocity a particle has over that point. If we instead move both points closer,
+and closer together, $\lim_{\Delta x\to0}$, we end up with a tangent line to the graph that tells us the instantaneous
+velocity of the particle at that specific moment in time. By taking the $\frac{d}{dx}$, or derivative, of each item, 
+we can obtain the next one.
+
+\medskip
+
+The opposite is also true. In order to go from a velocity-time graph to a displacement
+graph, we can just add up the individual velocities over a certain period of time.
+In other words:
+
+$$ \lim_{t\to0} \sum_iv(t_i)\Delta t $$
+
+Which means that we are treating the velocity-time graph as a series of tiny, tiny
+rectangles, as denoted by the width of the rectangle ($t$) which is close to 0.
+This gives us the area underneath the velocity-time graph and in doing so, allows
+us to create a displacement-time graph. This equation can be simplified to:
+
+\large $$\int_{t_1}^{t_2}v(t)dx$$ \normalsize
+\end{document}
